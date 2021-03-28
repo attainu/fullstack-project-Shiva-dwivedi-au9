@@ -1,0 +1,76 @@
+
+.UserTitle{
+    color: antiquewhite;
+}
+
+.profile{
+    background: rgba(4, 4, 12, 0.4);
+    float: right;
+    padding: 50px;
+    margin-right: 0px;
+    height: 88vh;
+    color: aliceblue;
+    text-align: justify;
+}
+
+.profile .name{
+    margin-right: 115px;
+}
+
+.profile .gender{
+    margin-right: 104px;
+}
+
+.profile .dept{
+    margin-right: 55px;
+}
+
+.profile .added{
+    margin-right: 83px;
+}
+
+.profile .joined{
+    margin-right: 80px;
+}
+
+.profile .contact{
+    margin-right: 55px;
+}
+
+.profile .role{
+    margin-right: 140px;
+}
+
+.profile button {
+    margin: 50px 18px;
+    padding: 10px;
+    background-color: #0e5da7;
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+}
+
+.profile button i{
+    margin: 0 10px;
+    font-size: 25px;
+}
+
+.DisplayAnnouncements{
+    color: aliceblue;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+}
+
+.display{
+    position: absolute;
+    z-index: -10;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+.display h3{
+    color: whitesmoke;
+}

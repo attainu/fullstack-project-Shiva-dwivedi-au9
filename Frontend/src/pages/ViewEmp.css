@@ -1,0 +1,93 @@
+
+.employee{
+    color: aliceblue;
+    /* background-color: rgba(12, 04, 12, 0.6); */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.employee h1{
+    margin-top: 200px;
+    background-color:rgba(11, 39, 116, 0.8) ;
+    height: 150px;
+    padding: 50px;
+}
+
+.container {
+    text-align: center;
+    background: rgba(4, 4, 12, 0.4);
+    transition: 0.3s;
+    margin: 20px;
+    width: 600px;
+  }
+  
+  .container:hover {
+    background: rgba(11, 39, 116, 0.8);
+  }
+  
+  .container1 .container {
+    padding: 2px 16px;
+  }
+  
+  .container1 img{
+      width: 20%;
+
+  }
+
+  .renderEmp{
+      text-align: center;
+      margin: 20px;
+      padding: 20px;
+  }
+
+  .edit{
+    padding: 8px;
+    margin: 5px;
+    background-color: blue;
+    color: aliceblue;
+  }
+
+  .delete{
+    padding: 8px 10px;
+    margin: 5px;
+    background-color: rgb(207, 8, 8);
+    color: aliceblue;
+  }
+
+.update{
+  background-color: rgba(11, 39, 116, 0.8);
+  margin: 20px;
+  padding: 50px;
+  text-align: center;
+}
+
+.update input{
+  text-align: center;
+  margin: 10px;
+  background: none;
+  color: aliceblue;
+  outline: none;
+  border: none;
+  border-bottom: 4px solid black;
+}
+
+
+.update select {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.update button{
+  background-color: black;
+  color: aliceblue;
+  padding: 5px;
+}
+
+.update button:hover{
+  background-color: gold;
+  color: black;
+  transition: 0.2s;
+}

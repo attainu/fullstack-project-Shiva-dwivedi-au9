@@ -1,0 +1,43 @@
+.create_task{
+    background-color: rgba(4, 4, 12, 0.4);
+    margin: 50px;
+    padding: 100px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create_task button{
+    background-color: #0e5da7;
+    color: aliceblue;
+    padding: 5px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+}
+
+.create_task button:hover{
+    background: gold;
+    color: black;
+    transition: 0.3s ease-in;
+}
+
+.create_task input{
+  margin: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: #0e5da7 2px solid;
+  color: aliceblue;
+  text-align: center;
+  caret-color: aliceblue;
+}
+
+.create_task select{
+    font-weight: bold;
+    outline: none;
+    border-bottom: #0e5da7 2px solid;
+    margin: 10px 0px;
+}

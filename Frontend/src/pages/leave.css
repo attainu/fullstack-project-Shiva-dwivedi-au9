@@ -1,0 +1,67 @@
+
+.applyLeave{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 45px;
+    text-align: center;
+    background-color: rgba(4, 4, 12, 0.4);
+    color: aliceblue;
+}
+
+.applyLeave input{
+    margin: 20px;
+    text-align: center;
+    outline: none;
+    caret-color: blue;
+    font-size: 18px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #0e5da7;
+    color: aliceblue;
+}
+
+.applyLeave input[type=date]{
+    background-color: #0e5da7;
+}
+
+.applyLeave #Reason_for_leave{
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    font-size: 20px;
+    caret-color: blue;
+    outline: none;
+    background-color: #0e5da7;
+    color: black;
+}
+
+.applyLeave #Reason_for_leave::placeholder{
+    color: white;
+}
+
+.applyLeave button{
+    padding: 3px 5px;
+    border-radius: 20px;
+    background-color: #0e5da7;
+    color: white;
+    font-size: 20px;
+    /* text-shadow: 3px 3px black; */
+    cursor: pointer;
+    outline: none;
+    margin: 30px;
+}
+
+.LeavePolicy{
+    background-color: rgba(4, 4, 12, 0.4);
+    color: aliceblue;
+    margin: 30px;
+    /* padding: 10px; */
+    text-align: left justify;
+}
+
+.LeavePolicy p span{
+    color: #0e5da7;
+    font-size: large;
+}

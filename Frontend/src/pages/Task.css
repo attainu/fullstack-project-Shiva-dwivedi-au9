@@ -1,0 +1,51 @@
+
+.TL_Tasks h2{
+    color: aliceblue;
+    font-size: 25px;
+    text-align: center;
+}
+
+.TL_Tasks select{
+    background-color: black;
+    color: aliceblue;
+    margin-left: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.task_details{
+    background-color: rgba(126, 155, 180,0.7);
+    margin: 50px;
+    padding: 30px;
+    color: black;
+}
+
+.task_details button{
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 3px;
+    background-color: teal;
+    color: aliceblue;
+}
+
+.task_details input{
+    width: 500px;
+    text-align: center;
+    outline: none;
+}
+
+.TL_Tickets{
+    background-color: aliceblue;
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deleteTaskBtn{
+    background-color: red;
+    padding: 8px;
+    color: aliceblue;
+    align-items: center;
+}

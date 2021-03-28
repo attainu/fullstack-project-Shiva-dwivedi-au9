@@ -1,0 +1,59 @@
+
+.register{
+    margin: 100px;
+    text-align: center;
+    background-color: rgba(4, 4, 12, 0.4);
+    color: aliceblue;
+    padding: 50px;
+}
+
+.register h2{
+    border-bottom: #0e5da7 1px solid;
+}
+
+.register input{
+    margin: 10px;
+    text-align: center;
+    outline: none;
+    caret-color: blue;
+    font-size: 18px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #0e5da7;
+    color: aliceblue;
+}
+
+.register button{
+    padding: 3px 5px;
+    border-radius: 20px;
+    background-color: #0e5da7;
+    color: white;
+    font-size: 18px;
+    /* text-shadow: 3px 3px black; */
+    cursor: pointer;
+    outline: none;
+    margin: 30px;
+}
+
+.register select{
+    border: none;
+    margin: 10px;
+    outline: none;
+    background-color: #0e5da7;
+    border-radius: 30px;
+    color: whitesmoke;
+}
+
+.register input[type=date] {
+    background-color: #0e5da7;
+}
+
+.Gender{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.Gender label{
+    font-size: 18px;
+}

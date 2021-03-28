@@ -1,0 +1,75 @@
+
+.attendance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.markat{
+    float: right;
+    margin: 30px;
+    color: aliceblue;
+    letter-spacing: 2px;
+}
+
+.attendance button{
+    background-color: #0e5da7;
+    padding: 5px 10px;
+    color: aliceblue;
+}
+
+.showCount{
+    margin: 30px;
+    margin-top: 130px;
+    color: aliceblue;
+    letter-spacing: 2px;
+    padding: 20px;
+    background-color: rgba(4, 12, 4, 0.5);
+}
+
+.showCount h2{
+    font-size: 30px;
+}
+
+.count{
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(16, 3, 93, 0.7);
+    text-align: center;
+}
+
+.Create_attendance{
+    background-color: rgba(4, 12, 4, 0.5);
+   margin: 150px 400px;
+   text-align: center;
+   padding: 50px 200px;
+}
+
+.Create_attendance button{
+    margin-top: 30px;
+}
+
+.Create_attendance button:hover{
+    background-color: goldenrod;
+    transition: 0.4s;
+}
+
+.TL_attendance{
+    color: aliceblue;
+}
+
+.markedAttendance{
+    margin-top: 100px;
+    background: rgba(4, 12, 4, 0.5);
+    padding: 50px 30px;
+}
+
+.markedAttendance h2{
+    font-size: 25px;
+}
+
+.markAttendance {
+    font-size: 18px ;
+    margin-top: 100px;
+    background: rgba(4, 12, 4, 0.5);
+    padding: 50px 30px;
+}

@@ -1,0 +1,153 @@
+.navbar {
+  background: rgba(4, 4, 12, 0.4);  /* fallback for old browsers */
+
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background: rgba(12, 4, 12, 0.952);  /* fallback for old browsers */
+  overflow-y: scroll;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #1a83ff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background: rgba(12, 4, 12, 0.8);  /* fallback for old browsers */
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+.AuthBtn{
+  position: absolute;
+  right: 0;
+  margin: 20px;
+}
+
+.AuthBtn a{
+  text-decoration: none;
+  color: #0F2027;
+  font-weight: bold;
+}
+
+.AuthBtn a:hover{
+  color: #f5f5f5;
+  transition: 0.4s;
+}
+
+.AuthBtn .register{
+  cursor: pointer;
+  padding: 5px 20px;
+  margin: 10px;
+  color: white;
+}
+
+.AuthBtn .login{
+  cursor: pointer;
+  padding: 5px 20px;
+  margin: 10px;
+}
+
+.AuthBtn .register:hover {
+  background-color: #2C5364 ;
+  transition: 0.6s;
+}
+
+.AuthBtn .login:hover {
+  background-color: #2C5364 ;
+  transition: 0.6s;
+}
+
+.username{
+  color: #f5f5f5;
+}
+
+.navData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navData button{
+  margin: 30px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background-color: #0e5da7;
+  color: white;
+  font-size: 20px;
+  /* text-shadow: 3px 3px black; */
+  cursor: pointer;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(128, 128, 128); 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(2, 88, 84); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3284aa; 
+}

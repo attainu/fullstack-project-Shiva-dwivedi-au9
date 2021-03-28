@@ -1,0 +1,44 @@
+.createAnnouncement{
+    color: black;
+    font-size: 20px;
+    margin: 30px;
+    padding: 5px;
+}
+
+.createAnnouncement button{
+     float: right;
+    background-color: rgb(2, 2, 3);
+    color: aliceblue;
+    padding: 5px;
+}
+
+.createAnnouncement button:hover{
+    background-color: gold;
+    color: black;
+    transition: 0.4s;
+}
+
+.createAnnouncement i {
+    padding-left: 20px;
+}
+
+.delBTN{
+    background-color: red;
+    padding: 8px;
+    color: aliceblue;
+}
+
+.allAnnouncements{
+    color: aliceblue;
+    background-color: rgba(12, 4, 12, 0.8);
+    margin: 35px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ann h2{
+    color: aliceblue;
+    margin-left: 35px;
+}
