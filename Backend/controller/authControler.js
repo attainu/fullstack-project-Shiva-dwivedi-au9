@@ -292,6 +292,25 @@ router.post('/Createannoucement', (req, res) => {
 
 })
 
+router.post('/createAttendance' , (req,res) => {
+    let token = req.headers['x-access-token']
+    if(!token) return res.status(500)
+    .send({auth : false,error : "No token provided"})
+    jwt.verify(token,config.secret, (err, data) => {
+        if(err) return res.status(500)
+        .send({auth : false,error : "Invalid Token"})
+        today = new Date()
+        date=today.getFullYear() +"-"+ parseInt(today.getMonth()+1) + "-"+ today.getDate() 
+        let details ={
+            date
+        }
+        emp_attendance.$push({ Attendance : details },(err, result) => {
+            if (err) throw err
+            return res.send('Attendance updated')
+        })
+    })
+})
+
 
 //register Employee
 
