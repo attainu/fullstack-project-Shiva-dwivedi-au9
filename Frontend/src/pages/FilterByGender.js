@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { PieChart } from 'react-minimal-pie-chart';
 
 const Emp_URL = "https://corpenviro-backend.herokuapp.com/api/auth/Allemployees"
 
@@ -22,7 +21,7 @@ function FilterByGender() {
     {
         if(employee) {
             return(
-                <div style={{color:"aliceblue"}}>
+                <div style={{color:"black",fontSize:"30px",fontWeight:"bold"}}>
                      {employee.filter(person => person.gender == 'female').length}
                 </div>
             )
@@ -33,7 +32,7 @@ function FilterByGender() {
     {
         if(employee) {
             return(
-                <div style={{color:"aliceblue"}}>
+                <div style={{color:"black",fontSize:"30px",fontWeight:"bold"}}>
                      {employee.filter(person => person.gender == 'male').length}
                 </div>
             )
@@ -42,16 +41,15 @@ function FilterByGender() {
 
 
     return (
-        <div>
-                 {renderFemales(employee)}
-                 {renderMales(employee)}
-                 <PieChart
-  data={[
-    { title: 'One', value: 10, color: '#E38627' },
-    { title: 'Two', value: 15, color: '#C13C37' },
-    { title: 'Three', value: 20, color: '#6A2135' },
-  ]}
-/>
+        <div className="filtereByGender">
+            <div className="filterFemale">
+            <h5>Female Employees</h5> 
+            {renderFemales(employee)}
+            </div>
+            <div className="filterMale">
+            <h5>Male Employees</h5> 
+            {renderMales(employee)}
+            </div>
         </div>
     )
 }

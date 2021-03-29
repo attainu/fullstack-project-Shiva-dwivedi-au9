@@ -35,12 +35,13 @@
 }
 
 .TL_Tickets{
-    background-color: aliceblue;
+    background-color: rgba(240, 241, 243, 0.9);
     margin: 30px;
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black;
 }
 
 .deleteTaskBtn{

@@ -5,11 +5,11 @@ import './Attendance.css'
 
 const Attendance_url = "https://corpenviro-backend.herokuapp.com/api/auth/markAttendance"
 const UserInfo = "https://corpenviro-backend.herokuapp.com/api/auth/userinfo"
+const TL_Attendance = "https://corpenviro-backend.herokuapp.com/api/auth/employeattendence"
+const create_TL = "https://corpenviro-backend.herokuapp.com/api/auth/markTLAttendance"
 const token = localStorage.getItem("token")
 const valid = sessionStorage.getItem("date")
-const currentLeaves = localStorage.getItem("count")
-
-const createAttendance_URL = "http://localhost:5400/api/auth/createAttendance"
+const count_att = localStorage.getItem("count")
 
 let today = new Date();
 let 
@@ -34,7 +34,8 @@ export class Attendance extends Component {
     this.state={
       Attendance:"",
       marked:false,
-      count:0
+      count:"",
+      emp_count:""
     }
 
     this.props.fetchUser()
@@ -61,9 +62,9 @@ export class Attendance extends Component {
   createAttendance(e){
     // this.setState({count:this.state.count + 1})
     // localStorage.setItem("count" , this.state.count)
-    fetch(createAttendance_URL ,
+    fetch(create_TL ,
       {
-        method:"POST",
+        method:"PATCH",
         headers:{
           'Accept':'application/json',
           'Content-Type':'application/json',
@@ -75,31 +76,45 @@ export class Attendance extends Component {
   renderAttendance =(data) => {
    
     if(data){
-
       const _date = this.props.user.attendance.find(_date_ => _date_.date == date)
+      console.log(JSON.stringify(_date))
       sessionStorage.setItem("date" , JSON.stringify(_date))
       return (
-        <h2 className="count">{(((data.attendance.length)/(currentLeaves))*100).toFixed(2)}%</h2>
+        <h2 className="count">{(((data.attendance.length)/(count_att))*100).toFixed(2)}%</h2>
       )
     }
    
   }
 
+  renderTLAttendance = (data) => {
+    if(data) {
+      return data.map((item => {
+        return(
+          <div>
+            <h2>{item.Attendence.length}</h2>
+            {localStorage.setItem("count" , item.Attendence.length )}
+          </div>
+        )
+      }))
+    }
+  }
+
   render() {
+
     return (
       <div className="attendance">
       { this.props.user.role !== "TeamLead" ?
         <><div className="showCount">
             <h2>Your Current Attendance is:</h2>
            {this.renderAttendance(this.state.Attendance)}
+           <h2>Total Created Attendance :{this.renderTLAttendance(this.state.count)}</h2>
         </div>
 
         <div className="markat">
-        { valid !== null || this.state.marked ? 
+        { valid !== null || valid !== undefined || this.state.marked ? 
         <div className="markedAttendance">
           <h2>You have already marked your attendance for the day</h2>
           <button disabled>Already Marked</button>
-    
         </div> : 
         <div className="markAttendance">
           <h2 >Mark your attendance here</h2>
@@ -109,6 +124,7 @@ export class Attendance extends Component {
         </div></> : <div className="Create_attendance">
           <h2 className="TL_attendance">Create Attendance</h2>
           <button onClick={this.createAttendance}>Create Attendance</button>
+          <h4 style={{color:"aliceblue"}}>Created attendance count : {this.renderTLAttendance(this.state.count)} </h4>
         </div>
       }
         
@@ -130,6 +146,11 @@ export class Attendance extends Component {
        .then(data => this.setState({Attendance:data}))
     }, 1000)
     
+    setInterval(() => {
+        fetch(TL_Attendance)
+      .then( res => res.json())
+      .then(data => this.setState({count:data}))
+    }, 1000)
 
   }
 

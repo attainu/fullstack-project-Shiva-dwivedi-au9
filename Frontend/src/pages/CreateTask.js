@@ -56,7 +56,7 @@ function CreateTask(props) {
            
            .then((res) => console.log(res))
            alert("Task has been created successfully")
-           setAddTask({})
+           addTask({})
     }
 
     return (

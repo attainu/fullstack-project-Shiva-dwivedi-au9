@@ -31,10 +31,10 @@ function UserProfile(props) {
                 {/* <button><i class="fa fa-pencil"></i>Edit Profile</button> */}
              </div>
              <div className="display">
+                 <FilterByGender />
                 <h3>Important Announcements</h3>
                 <DisplayAnnouncement/>
              </div>
-             <FilterByGender />
         </div>
         
     )
