@@ -151,21 +151,18 @@ router.post('/mark', (req, res) => {
     if(!token) return res.status(500).send({auth : false,error : "No token provided"})
     jwt.verify(token,config.secret, (err, data) => {
         if(err) return res.status(500).send({auth : false,error : "Invalid Token"})
-        User.create(data.id,{password:0}, (err, result) => {
-            if(result){
+       
                 let employeedetail = {
                     employee_name: req.body.employee_name,
                     employee_email: req.body.employee_email,
                     employee_role: req.body.employee_role,
-                    employee_division: req.body.employee_division,
                 }
                 console.log(employeedetail)
                 emp_attendance.create(employeedetail, (err, response) => {
                     if(err) throw err;
                     return res.send({message: "Attendence marked successfully"})
                 })
-            }
-        })
+         
     })
 
 })
@@ -182,6 +179,24 @@ function markAttendance(){
         date: date
     }
 }
+
+//mark TL attendance
+
+router.patch('/markTLAttendance', (req, res) => {
+    let token = req.headers['x-access-token']
+    if(!token) return res.status(500)
+    .send({auth : false,error : "No token provided"})
+    jwt.verify(token,config.secret, (err, data) => {
+        if(err) return res.status(500)
+        .send({auth : false,error : "Invalid Token"})
+        let attendance1 = markAttendance()
+        console.log(attendance1.count)
+        emp_attendance.updateOne({_id :"606208863433722964ca4c70"},{ $push :{Attendence:attendance1}},(err, result) => {
+            if (err) throw err
+            return res.send('Attendance updated')
+        })
+    })
+})
 
 // mark attendance
 
