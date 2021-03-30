@@ -95,9 +95,11 @@ class ViewLeaves extends Component {
     render() {
 
         return (
+        
             <div className="myLeave">
-
-            {this.state.leaveReq.length >0 ? 
+                    { this.props.user.role === "HR" ? 
+                    <div>
+                    {this.state.leaveReq.length >0 ? 
                 <>
                     <h2>All Leaves</h2>
 
@@ -119,6 +121,9 @@ class ViewLeaves extends Component {
                 </table>
                 </> : 
                 <h2>No Data Found</h2>}
+                </div> :   <center style={{color:"white"}}> <h2>You don't have access to leaves</h2></center>
+                    }
+           
         </div>
 
         )

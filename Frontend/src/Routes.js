@@ -17,19 +17,24 @@ import Team from './pages/Team';
 import Support from './components/Support';
 import CreateTask from './pages/CreateTask';
 import Announcement from './pages/Announcement'
+import fetchUserSuccess from './redux/Actions/UserProfile/UserActions';
 
 const token =localStorage.getItem("token")
 
 function App(props) {
 
-  const  { auth } = props
+  const  { auth, user } = props
   return (
     <>
      <BrowserRouter>
       { auth.isLoggedIn ? <Navbar /> :  <Header/> }
           <Route exact path="/" component={LandingPage} />
           <Route path="/home" component={Home} />
-          <Route path='/attendance' component={Attendance} />
+
+          <Route path='/attendance' render={(props) => (
+            <Attendance {...props} userdata={user} />
+          )} />
+          
           <Route path="/apply_leave" component={ApplyLeave} />
           <Route path="/tasks" component={Tasks} />
           <Route path="/team" component={Team} />
@@ -39,7 +44,9 @@ function App(props) {
           <Route path="/leaves" component={ViewLeaves} />
           <Route path="/support" component={Support} />
           <Route path="/CreateTask" component={CreateTask} />
-          <Route path="/announcement" component={Announcement}/>
+          <Route path="/announcement" render={(props) => (
+            <Announcement {...props} userdata={user} />
+          )}/>
      </BrowserRouter>
     </>
   );
@@ -47,8 +54,15 @@ function App(props) {
 
 const mapStateToProps =( state ) => {
   return {
-      auth : state.auth
+      auth : state.auth,
+      user: state.userProfile.user
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+      fetchUser : () => dispatch(fetchUserSuccess())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

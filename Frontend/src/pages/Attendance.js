@@ -77,7 +77,6 @@ export class Attendance extends Component {
    
     if(data){
       const _date = this.props.user.attendance.find(_date_ => _date_.date == date)
-      console.log(JSON.stringify(_date))
       sessionStorage.setItem("date" , JSON.stringify(_date))
       return (
         <h2 className="count">{(((data.attendance.length)/(count_att))*100).toFixed(2)}%</h2>
@@ -85,7 +84,7 @@ export class Attendance extends Component {
     }
    
   }
-
+  
   renderTLAttendance = (data) => {
     if(data) {
       return data.map((item => {
@@ -100,27 +99,36 @@ export class Attendance extends Component {
   }
 
   render() {
-
     return (
       <div className="attendance">
       { this.props.user.role !== "TeamLead" ?
         <><div className="showCount">
+       
             <h2>Your Current Attendance is:</h2>
            {this.renderAttendance(this.state.Attendance)}
            <h2>Total Created Attendance :{this.renderTLAttendance(this.state.count)}</h2>
+
         </div>
 
         <div className="markat">
-        { valid !== null || valid !== undefined || this.state.marked ? 
-        <div className="markedAttendance">
-          <h2>You have already marked your attendance for the day</h2>
-          <button disabled>Already Marked</button>
-        </div> : 
-        <div className="markAttendance">
-          <h2 >Mark your attendance here</h2>
-          <button onClick={this.submitAttendance}>Submit Attendance</button>
-         </div> 
-           }  
+
+            { valid !=='undefined' || this.state.marked === true
+            
+             ? 
+                  <div className="markedAttendance">
+                  
+                      <h2>You have already marked your attendance for the day</h2>
+                      <button disabled>Already Marked</button>
+
+                  </div>
+              : 
+
+                  <div className="markAttendance">
+                        <h2 >Mark your attendance here</h2>
+                        <button onClick={this.submitAttendance}>Submit Attendance</button>
+                        
+                  </div> 
+            }  
         </div></> : <div className="Create_attendance">
           <h2 className="TL_attendance">Create Attendance</h2>
           <button onClick={this.createAttendance}>Create Attendance</button>

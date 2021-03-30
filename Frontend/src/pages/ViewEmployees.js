@@ -179,7 +179,7 @@ function ViewEmployees(props) {
                             </div>
                 </form> 
       </Modal>
-    </div>:<h2>You don't have access to this page</h2>}
+    </div>:<h2 style={{textAlign:"center" , color:"aliceblue"}} >You don't have access to this page</h2>}
        </>
     )
 }

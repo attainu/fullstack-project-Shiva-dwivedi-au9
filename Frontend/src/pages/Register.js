@@ -116,7 +116,7 @@ function Register(props) {
                             <div class="container signin">
                             </div>
                 </form> :
-                <h2>You don't have access to add a user</h2>
+               <center style={{color:"white"}}> <h2>You don't have access to add a user</h2></center>
              }
              
         </div>

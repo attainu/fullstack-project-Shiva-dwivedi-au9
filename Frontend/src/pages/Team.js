@@ -3,7 +3,7 @@ import {connect } from 'react-redux'
 import './Team.css'
 
 const role = sessionStorage.getItem("role")
-const Emp_URL = "https://corpenviro-backend.herokuapp.com/api/auth/AllEmployees3?department=" + role
+
 
 function Team(props) {
 
@@ -11,7 +11,7 @@ function Team(props) {
     const [team, setteam] = useState("")
 
     useEffect(() => {
-
+        const Emp_URL = "https://corpenviro-backend.herokuapp.com/api/auth/AllEmployees3?department=" + user.department
         setInterval(()=> {
             fetch(Emp_URL)
             .then( res => res.json())

@@ -10,7 +10,9 @@ const createAnnouncementURL = "https://corpenviro-backend.herokuapp.com/api/auth
 const getAnnouncementURL = "https://corpenviro-backend.herokuapp.com/api/auth/Announcements"
 const deleteAnnouncementURL = "https://corpenviro-backend.herokuapp.com/api/auth/DeleteAnnouncement"
 
-function Announcement() {
+function Announcement(props) {
+
+    const { userdata } = props
 
     const [announcement , setAnnouncement] = useState("")
     const [createdAnnounce, setCreatedAnnounce] = useState({})
@@ -93,32 +95,33 @@ function Announcement() {
     }
 
     return (
+    <div>
+        { userdata.role === "TeamLead" ?  <div className="ann">
+        <div className="createAnnouncement">
+  
+       <button onClick={onOpenModal}>Create New Announcement<i class="fas fa-plus-square"></i></button> 
+       <Modal open={open} onClose={onCloseModal} center>
+               <form onSubmit={createAnnouncement}>
+                   <label htmlFor="Announcement_Subject">Subject</label>
+                   <input onChange={subject} type="text" placeholder="Enter the subject" name="Announcement_Subject" required/>
 
-        <div className="ann">
-             <div className="createAnnouncement">
-       
-            <button onClick={onOpenModal}>Create New Announcement<i class="fas fa-plus-square"></i></button> 
-            <Modal open={open} onClose={onCloseModal} center>
-                    <form onSubmit={createAnnouncement}>
-                        <label htmlFor="Announcement_Subject">Subject</label>
-                        <input onChange={subject} type="text" placeholder="Enter the subject" name="Announcement_Subject" required/>
+                   <label htmlFor="Announcement">Announcement</label>
+                   <input onChange={announce} type="text" placeholder="Enter the Announcement" name="Announcement" required/>
 
-                        <label htmlFor="Announcement">Announcement</label>
-                        <input onChange={announce} type="text" placeholder="Enter the Announcement" name="Announcement" required/>
+                   <label htmlFor="Announcement_created_by">Created by</label>
+                   <input onChange={createdBy} type="text" placeholder="Who's creating it?" name="Announcement_created_by" required/>
 
-                        <label htmlFor="Announcement_created_by">Created by</label>
-                        <input onChange={createdBy} type="text" placeholder="Who's creating it?" name="Announcement_created_by" required/>
+                   <button className="createBTN" type="submit">Create Announcement</button>
+               </form>
+       </Modal>
 
-                        <button className="createBTN" type="submit">Create Announcement</button>
-                    </form>
-            </Modal>
-
-      
-  </div>
-             <h2>All Announcements</h2>
-            {renderAnnouncements(announcement)}
-        </div>
-       
+ 
+</div>
+        <h2>All Announcements</h2>
+       {renderAnnouncements(announcement)}
+   </div>
+  : <center style={{color:"white"}}> <h2>You don't have access to add an Announcement</h2></center>}
+  </div>   
     )
 }
 

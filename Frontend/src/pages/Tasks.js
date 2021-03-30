@@ -23,7 +23,7 @@ function Tasks(props) {
  
          fetchUser()
 
-         const taskByDept = DeptTask + dept
+         const taskByDept = DeptTask + user.department
          setInterval(() => {
 
           fetch(taskByDept)
